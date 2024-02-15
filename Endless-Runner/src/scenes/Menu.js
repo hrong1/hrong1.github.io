@@ -39,7 +39,7 @@ class Menu extends Phaser.Scene {
         }
 
         this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'Endless Runner', menuConfig).setOrigin(0.5)
-        this.add.text(game.config.width/2, game.config.height/2, 'Use SPACE to jump', menuConfig).setOrigin(0.5)
+        this.add.text(game.config.width/2, game.config.height/2, 'Use SPACE to jump avoid graffiti', menuConfig).setOrigin(0.5)
         //menuConfig.backgroundColor = '#00FF00'
         //menuConfig.color = '#000'
         this.add.text(game.config.width/2, game.config.height/2 +borderUISize + borderPadding, 'Press SPACE for start', menuConfig).setOrigin(0.5)

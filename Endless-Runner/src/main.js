@@ -1,6 +1,13 @@
 /*
 Name: Haorong Rong
 Game title: Jumping Blocks
+Approximate hours spent: 23
+Creative tilt justification:
+I implement a pause feature in my game. Everytime when the player press Q the game will stop,
+it can be continue when press Q again
+
+My game didn't have a great visual style. but however all the art are create by me
+Even though it may be too simple, but I still feel pround of it
 */
 
 
