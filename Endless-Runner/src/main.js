@@ -1,5 +1,6 @@
 /*
-Haorong Rong
+Name: Haorong Rong
+Game title: Jumping Blocks
 */
 
 
@@ -28,4 +29,4 @@ let highScore = 0;
 let currentpoint = 0;
 let animecreate = 0
 // reserve keyboard bindings
-let keySPACE, keyLEFT, keyRIGHT
+let keySPACE, keyLEFT, keyRIGHT, keyQ

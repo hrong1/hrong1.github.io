@@ -61,6 +61,7 @@ class Play extends Phaser.Scene {
         this.physics.add.collider(this.player, this.moster3, this.gameover, null, this)       
         this.physics.world.debugGraphic.clear()
         keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE)
+        keyQ = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Q)
         
 
         //sound
@@ -71,6 +72,13 @@ class Play extends Phaser.Scene {
     }
 
     update(){
+        if (Phaser.Input.Keyboard.JustDown(keyQ)) {
+            if (this.pause == false){
+                this.pause = true
+            } else{
+                this.pause = false
+            }
+        }
         if (!this.pause){
             this.point += 1
             this.score.text = this.point
