@@ -84,11 +84,8 @@ class Menu extends Phaser.Scene {
                     this.sound.play('blip-select');
                     this.scene.stop("menuScene")
                     game.destroy(true, false)
-                    window.close();
                     // stop game from
                     // https://stackoverflow.com/questions/59448975/how-to-stop-a-phaser-game-and-remove-it-from-a-page
-                    //close windows from
-                    //https://stackoverflow.com/questions/2076299/how-to-close-current-tab-in-a-browser-window
                 }
             })
          });
