@@ -43,7 +43,9 @@ class Credit extends Phaser.Scene {
         // input select
         if (Phaser.Input.Keyboard.JustDown(keyRESET)) {
             this.scene.stop("creditScene")
+            this.scene.stop("playScene")
             this.scene.launch('menuScene')
+
         }
     }
     

@@ -3,7 +3,19 @@ class enemy extends Phaser.GameObjects.Sprite {
         super(scene, x, y, texture, frame)
         scene.add.existing(this);
         scene.physics.add.existing(this);
-        this.hp = 100;
-        
+        //this.tint = 0x0000ff
+        this.hp = 3;
+        this.body.velocity.y = 200;
+    }
+
+    update(){
+        if (this.hp <= 0){
+            this.destroy();
+        }
+        this.body.velocity.y = 200
+    }
+
+    hurt(){
+        this.hp -= 1;
     }
 }

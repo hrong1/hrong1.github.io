@@ -3,23 +3,22 @@ class Spaceship extends Phaser.GameObjects.Sprite {
         super(scene, x, y, texture, frame)
         scene.add.existing(this);
         scene.physics.add.existing(this);
-        this.hp = 100;
+        this.hp = 5;
     }
     preload(){
         
     }
 
-    create ()
-    {
-        this.input.on('pointermove', (pointer) =>
-        {
-            this.ship.x = pointer.x;
-            this.ship.y = pointer.y;
-        });
-
+    create (){
     }
 
     update(){
+        if (this.hp <= 0){
+            this.destroy();
+        }
+    }
 
+    hurt(){
+        this.hp -= 1;
     }
 }

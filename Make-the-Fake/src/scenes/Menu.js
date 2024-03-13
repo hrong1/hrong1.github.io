@@ -39,36 +39,75 @@ class Menu extends Phaser.Scene {
         keyUP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP)
         keyDOWN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN)
         keyENTER = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER)
-        this.rectangleA.setInteractive()
-        this.rectangleB.setInteractive()
-        this.rectangleC.setInteractive()
+        this.rectangleA.setInteractive() // Play
+        this.rectangleB.setInteractive() // Credit
+        this.rectangleC.setInteractive() // EXIT
+        //Play
         this.rectangleA.on("pointerover", () => {
-            this.sound.play('sfx-select')
-            this.sceneselect = 1;
-         });
-         this.rectangleB.on('pointerover', () => {
-            this.sound.play('sfx-select')
-            this.sceneselect = 2;
-         });
-         this.rectangleC.on('pointerover', () => {
-            this.sound.play('sfx-select')
-            this.sceneselect = 3;
-         });
-         this.input.on('pointerdown', () =>
-        {
-            if (this.sceneselect == 1){
-                this.sound.play('blip-select');
-                this.scene.stop("menuScene")
-                this.scene.launch('playScene')
-            }else if (this.sceneselect == 2){
-                this.sound.play('blip-select');
-                this.scene.stop("menuScene")
-                this.scene.launch('creditScene')
-            }else if (this.sceneselect == 3){
-                this.sound.play('blip-select');
-                this.scene.stop('menuScene')
+            if (this.sceneselect != 1){
+                this.sound.play('sfx-select')
             }
-        });
+            this.sceneselect = 1;
+            this.input.on('pointerdown', () =>
+            {
+                if (this.sceneselect == 1){
+                    this.sound.play('blip-select');
+                    this.scene.stop("menuScene")
+                    this.scene.launch('playScene')
+                }
+            })
+         });
+         // Credit
+         this.rectangleB.on('pointerover', () => {
+            if (this.sceneselect != 2){
+                this.sound.play('sfx-select')
+            }
+            this.sceneselect = 2;
+            this.input.on('pointerdown', () =>
+            {
+                if (this.sceneselect == 2){
+                    this.sound.play('blip-select');
+                    this.scene.stop("menuScene")
+                    this.scene.launch('creditScene')
+                }
+            })
+         });
+         //Exit
+         this.rectangleC.on('pointerover', () => { 
+            if (this.sceneselect != 3){
+                this.sound.play('sfx-select')
+            }
+            this.sceneselect = 3;
+            this.input.on('pointerdown', () =>
+            {
+                if (this.sceneselect == 3){
+                    this.sound.play('blip-select');
+                    this.scene.stop("menuScene")
+                    game.destroy(true, false)
+                    // stop game from
+                    // https://stackoverflow.com/questions/59448975/how-to-stop-a-phaser-game-and-remove-it-from-a-page
+                }
+            })
+         });
+         this.rectangleA.on("pointerout", () => {
+            if (this.sceneselect == 1){
+                this.sceneselect = -1;
+
+            }
+         });
+         this.rectangleB.on('pointerout', () => {
+            if (this.sceneselect == 2){
+                this.sceneselect = -1;
+
+            }
+         });
+         this.rectangleC.on('pointerout', () => { 
+            if (this.sceneselect == 3){
+                this.sceneselect = -1;
+
+            }
+         });
+         
     }
 
     update() {
