@@ -11,6 +11,7 @@ class Menu extends Phaser.Scene {
     }
 
     create(){
+        menupick = 1;
         //Load background
         this.starfield = this.add.tileSprite(0, 0, 640, 720, 'starfield').setOrigin(0, 0)
         //title
@@ -117,7 +118,6 @@ class Menu extends Phaser.Scene {
             loop: true 
             })
         this.menubgm.play()
-        this.sound.stopByKey('playbgm');
         // stop by key from
         //https://phaser.discourse.group/t/how-do-i-start-music-in-one-scene-and-stop-it-in-another/6032/6
     }

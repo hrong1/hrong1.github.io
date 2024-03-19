@@ -30,3 +30,4 @@ let keyPUASE, keyRESET, keyLEFT, keyRIGHT, keyUP, keyDOWN, keyENTER
 let hscore = 0;
 let score = 0;
 let lose = 0;
+let menupick = 0;

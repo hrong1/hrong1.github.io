@@ -10,6 +10,12 @@ class Select extends Phaser.Scene {
     }
 
     create(){
+        if (menupick == 1){
+            this.menubgm = this.sound.add('menubgm', {
+                loop: true 
+                })
+            this.menubgm.play()
+        }
         //Load background
         this.starfield = this.add.tileSprite(0, 0, 640, 720, 'starfield').setOrigin(0, 0)
 
@@ -118,6 +124,8 @@ class Select extends Phaser.Scene {
     }
 
     update(){
+        this.sound.stopByKey('playbgm');
+        this.sound.stopByKey('bossbgm');
         this.starfield.tilePositionY -= 4;
         if (this.scenenum == 1){
             this.rectangleA.setStrokeStyle(4, 0xffffff);
